@@ -1,10 +1,23 @@
-print("My First Chemical Engineering Project")
+print("CHEMICAL ENGINEERING HEAT CALCULATOR")
+print("------------------------------------")
 
-mass = 100
-specific_heat = 2
-initial_temperature = 30
-final_temperature = 80
+mass = float(input("Enter mass (kg): "))
+cp = float(input("Enter specific heat capacity (kJ/kg K): "))
+t1 = float(input("Enter initial temperature (C): "))
+t2 = float(input("Enter final temperature (C): "))
 
-heat = mass * specific_heat * (final_temperature - initial_temperature)
+if mass <= 0:
+    print("Error: Mass must be positive.")
 
-print("Heat required =", heat, "kJ")
+elif cp <= 0:
+    print("Error: Specific heat capacity must be positive.")
+
+elif t2 < t1:
+    print("Error: Final temperature must be greater than or equal to initial temperature.")
+
+else:
+    heat = mass * cp * (t2 - t1)
+
+    print("------------------------------------")
+    print("Heat required =", heat, "kJ")
+    print("Calculation completed successfully!")
